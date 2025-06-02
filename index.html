@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RB TAXI – Výčetka</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <meta name="theme-color" content="#FFD700" />
+</head>
+<body>
+  <main class="container">
+
+    <!-- FORM PAGE -->
+    <section id="form-section" class="active">
+      <h1>RB TAXI – Výčetka</h1>
+      <form id="taxiForm">
+        <label for="driverName">Řidič:</label>
+        <input type="text" id="driverName" required />
+
+        <label for="trzba">Celková tržba (Kč):</label>
+        <input type="number" id="trzba" required />
+
+        <label for="km">Najeté km:</label>
+        <input type="number" id="km" required />
+
+        <label for="palivo">Palivo (Kč):</label>
+        <input type="number" id="palivo" value="0" />
+
+        <label for="myti">Mytí (Kč):</label>
+        <input type="number" id="myti" value="0" />
+
+        <label for="kartou">Kartou (Kč):</label>
+        <input type="number" id="kartou" value="0" />
+
+        <label for="fakturou">Fakturou (Kč):</label>
+        <input type="number" id="fakturou" value="0" />
+
+        <label for="pristavne">Přístavné (Kč):</label>
+        <input type="number" id="pristavne" value="0" />
+
+        <label for="typSměny">Typ směny:</label>
+        <select id="typSměny">
+          <option value="denni">Denní</option>
+          <option value="nocni">Noční</option>
+          <option value="odpoledni">Odpolední</option>
+          <option value="pul">½ směna</option>
+        </select>
+
+        <button type="submit">Spočítat</button>
+      </form>
+    </section>
+
+    <!-- OUTPUT PAGE -->
+    <section id="output-section" class="hidden">
+      <h2>Výpočet</h2>
+      <div id="outputBox" class="output-box"></div>
+      <div class="button-row">
+        <button onclick="newShift()">Nová směna</button>
+        <button onclick="downloadPDF()">Export PDF</button>
+        <button onclick="shareResult()">Sdílet</button>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
