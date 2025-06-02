@@ -85,3 +85,253 @@ section.active {
     flex-direction: column;
   }
 }
+
+
+/* Zvýraznění aktivního pole */
+input:focus, select:focus {
+  border-color: #ffcc00;
+  box-shadow: 0 0 4px #ffcc00;
+  outline: none;
+}
+
+/* Základní typografie */
+body {
+  font-size: 16px;
+  line-height: 1.5;
+  font-family: system-ui, sans-serif;
+  color: #111;
+}
+
+/* Větší tlačítka */
+button {
+  font-size: 16px;
+  padding: 12px 20px;
+  min-height: 44px;
+  cursor: pointer;
+}
+
+/* Výrazné barevné bloky */
+.alert {
+  background-color: #ffe6e6;
+  border-left: 6px solid #ff0000;
+  color: #cc0000;
+  padding: 12px;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.green {
+  color: #007700;
+}
+
+.highlight {
+  color: #0000cc;
+  font-weight: bold;
+}
+
+/* Dark mode podpora */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #121212;
+    color: #ffffff;
+  }
+
+  input, select {
+    background-color: #1e1e1e;
+    color: #fff;
+    border-color: #444;
+  }
+
+  button {
+    background-color: #333;
+    color: #fff;
+    border: 1px solid #555;
+  }
+
+  .alert {
+    background-color: #330000;
+    color: #ff6666;
+    border-left: 4px solid #ff3333;
+  }
+
+  .green {
+    color: #66ff66;
+  }
+
+  .highlight {
+    color: #66ccff;
+  }
+}
+
+/* Tisk: skryjeme prvky, které nemají být v PDF */
+@media print {
+  button, .no-print {
+    display: none !important;
+  }
+  body {
+    background: white !important;
+    color: black !important;
+  }
+}
+
+
+/* Béžové pozadí */
+body {
+  background-color: #fdf6e3 !important;
+  color: #333;
+}
+
+/* Mobilní přizpůsobení */
+@media (max-width: 600px) {
+  body {
+    padding: 1rem;
+    font-size: 1rem;
+  }
+  .container {
+    width: 100% !important;
+    margin: 0 auto;
+    padding: 1rem;
+  }
+  input, select, button {
+    width: 100% !important;
+    box-sizing: border-box;
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+/* Zvýraznění inputu při focusu */
+input:focus, select:focus, textarea:focus {
+  outline: 2px solid #007BFF;
+  border-color: #007BFF;
+}
+
+/* Lepší čitelnost */
+body {
+  font-family: system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Barevné stavy */
+.doplatek { color: red; }
+.vyplata { color: green; }
+.info { color: blue; }
+
+/* Výška tlačítek */
+button {
+  min-height: 44px;
+  padding: 10px;
+  font-size: 1rem;
+}
+
+/* Tooltip styl */
+.tooltip {
+  cursor: help;
+  border-bottom: 1px dotted #999;
+}
+
+/* 📱 Mobilní optimalizace */
+@media (max-width: 600px) {
+  body {
+    padding: 1rem;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  .container, form {
+    width: 100% !important;
+    padding: 1rem;
+    box-sizing: border-box;
+  }
+
+  input, select, textarea, button {
+    width: 100%;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    min-height: 44px;
+    box-sizing: border-box;
+  }
+
+  h1, h2 {
+    font-size: 1.4rem;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 0.25rem;
+    font-weight: bold;
+  }
+
+  .form-row {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+/* 🎯 Styl pro mobilní zobrazení výčetky */
+@media (max-width: 600px) {
+  .summary {
+    font-size: 1.1rem;
+    padding: 1rem;
+  }
+
+  .summary div {
+    margin-bottom: 0.75rem;
+  }
+
+  .result, .note {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+}
+
+/* 🖨 Styl pro tisk – skryj tlačítka, zvětši písmo */
+@media print {
+  button, .no-print {
+    display: none !important;
+  }
+
+  body {
+    font-size: 14pt;
+    padding: 0;
+    margin: 0;
+  }
+
+  .summary {
+    margin-top: 1rem;
+    font-size: 14pt;
+  }
+
+  h1, h2 {
+    font-size: 16pt;
+  }
+}
+
+.blikani {
+  animation: blink 0.5s ease-in-out 3;
+}
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+#vysledek.blikani {
+  border: 2px solid red;
+  background-color: #ffe5e5;
+  padding: 10px;
+  border-radius: 6px;
+}
+
+.note {
+  border: 2px dashed #999;
+  background-color: #fdf1c8;
+  padding: 12px;
+  border-radius: 6px;
+  margin-top: 1rem;
+  font-size: 1.1rem;
+}

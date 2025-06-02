@@ -1,71 +1,69 @@
 
 <!DOCTYPE html>
+
 <html lang="cs">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>RB TAXI – Výčetka</title>
-  <link rel="manifest" href="manifest.json" />
-  <link rel="stylesheet" href="style.css" />
-  <link rel="apple-touch-icon" href="apple-touch-icon.png">
-  <meta name="theme-color" content="#FFD700" />
-</head>
-<body>
-  <main class="container">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>RB TAXI | Výčetka směny</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <meta name="description" content="RB TAXI | Výčetka směny pro řidiče – evidence tržeb, nákladů a výplaty.">
+<link href="manifest.json" rel="manifest"/>
+<link href="style.css" rel="stylesheet"/>
+<link href="apple-touch-icon.png" rel="apple-touch-icon">
+<meta content="#FFD700" name="theme-color"/>
+</link></head>
+<body class="gold-theme">
+<main class="container">
+<!-- FORM PAGE -->
+<section class="active" id="form-section">
+<h1 style="color: #c9a032; font-weight: bold; text-align: center;">📋 RB TAXI | Výčetka směny</h1>
+<form id="taxiForm">
+<label for="typSměny">🕒  Typ směny:</label>
+<select id="typSměny">
+<option value="denni">Denní</option>
+<option value="nocni">Noční</option>
+<option value="odpoledni">Odpolední</option>
+<option value="pul">½ směna</option>
+</select>
+<label for="driverName">👤  Řidič:</label>
+<input id="driverName" required="" type="text"/>
+<label for="trzba">💰  Celková tržba (Kč):</label>
+<input id="trzba" required="" type="number"/>
+<label for="km">📏  Najeté km:</label>
+<input id="km" required="" type="number"/>
+<label for="palivo">⛽  Palivo (Kč):</label>
+<input id="palivo" type="number"/>
+<label for="myti">🧼  Mytí (Kč):</label>
+<input id="myti" type="number"/>
+<label for="kartou">💳  Kartou (Kč):</label>
+<input id="kartou" type="number"/>
+<label for="fakturou">🧾  Fakturou (Kč):</label>
+<input id="fakturou" type="number"/>
+<label for="pristavne">🚕  Přístavné (Kč):</label>
+<input id="pristavne" type="number"/>
 
-    <!-- FORM PAGE -->
-    <section id="form-section" class="active">
-      <h1>RB TAXI – Výčetka</h1>
-      <form id="taxiForm">
-        <label for="driverName">Řidič:</label>
-        <input type="text" id="driverName" required />
+<label for="jine">💸 Jiné platby (Kč):</label>
+<input id="jine" type="number"/>
+<button type="submit">Spočítat</button>
 
-        <label for="trzba">Celková tržba (Kč):</label>
-        <input type="number" id="trzba" required />
-
-        <label for="km">Najeté km:</label>
-        <input type="number" id="km" required />
-
-        <label for="palivo">Palivo (Kč):</label>
-        <input type="number" id="palivo" value="0" />
-
-        <label for="myti">Mytí (Kč):</label>
-        <input type="number" id="myti" value="0" />
-
-        <label for="kartou">Kartou (Kč):</label>
-        <input type="number" id="kartou" value="0" />
-
-        <label for="fakturou">Fakturou (Kč):</label>
-        <input type="number" id="fakturou" value="0" />
-
-        <label for="pristavne">Přístavné (Kč):</label>
-        <input type="number" id="pristavne" value="0" />
-
-        <label for="typSměny">Typ směny:</label>
-        <select id="typSměny">
-          <option value="denni">Denní</option>
-          <option value="nocni">Noční</option>
-          <option value="odpoledni">Odpolední</option>
-          <option value="pul">½ směna</option>
-        </select>
-
-        <button type="submit">Spočítat</button>
-      </form>
-    </section>
-
-    <!-- OUTPUT PAGE -->
-    <section id="output-section" class="hidden">
-      <h2>Výpočet</h2>
-      <div id="outputBox" class="output-box"></div>
-      <div class="button-row">
-        <button onclick="newShift()">Nová směna</button>
-        <button onclick="downloadPDF()">Export PDF</button>
-        <button onclick="shareResult()">Sdílet</button>
-      </div>
-    </section>
-
-  </main>
-
-  <script src="app.js"></script>
+  <label for="poznamka" class="tooltip" title="Poznámka ke směně">📝 Poznámka:</label>
+  <textarea id="poznamka" name="poznamka" rows="2" style="width: 100%; margin-bottom: 1rem;"></textarea>
+</form>
+</section>
+<!-- OUTPUT PAGE -->
+<section class="hidden" id="output-section">
+<h2><i class="material-icons" style="vertical-align: middle;">description</i> Výpočet</h2>
+<div class="output-box" id="outputBox"></div>
+<div class="button-row">
+<button onclick="newShift()">Nová směna</button>
+<button onclick="downloadPDF()">Export PDF</button>
+<button onclick="shareResult()">Sdílet</button>
+</div>
+</section>
+</main>
+<script src="app.js"></script>
 </body>
 </html>
